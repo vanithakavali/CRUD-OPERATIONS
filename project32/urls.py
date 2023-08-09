@@ -23,6 +23,6 @@ urlpatterns = [
     path('schoollist/',schoollist.as_view(),name='schoollist'),
     path('SchoolCreate/',SchoolCreate.as_view(),name='SchoolCreate'),
 
-
+    re_path('^Update/(?P<pk>\d+)/',SchoolUpdate.as_view(),name='Update'),
     re_path('(?P<pk>\d+)/',SchoolDetail.as_view(),name='detail'),
 ]

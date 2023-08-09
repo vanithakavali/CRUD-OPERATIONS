@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from app.models import *
-from django.views.generic import ListView,DetailView,CreateView
+from django.views.generic import ListView,DetailView,CreateView,UpdateView
 
 class schoollist(ListView):
     model=School
@@ -14,5 +14,9 @@ class SchoolDetail(DetailView):
     template_name='app/school_detail.html'
 
 class SchoolCreate(CreateView):
+    model=School
+    fields="__all__"
+
+class SchoolUpdate(UpdateView):
     model=School
     fields="__all__"
